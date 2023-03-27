@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Img/logo_argos_miniature.png" />
+    <link rel="stylesheet" href="CSS/sidebar.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="logo" id="logo">
+                <img src="logo-argos.png" alt="Argos" height="80px">
+            </div>
+            <nav class="menu">
+                <a href="#">Inicio</a>
+                <a href="#">Zona</a>
+                <a href="#">Login</a>
+            </nav>
+        </header>
+        <section class="main">
+            <article>
+                <div class="fecha"><h4>26/03/2023</h4></div>
+            </article>
+            <hr>
+            <article class="informe">
+                <div class="planta" id="planta">
+                    <div class="titulo">
+                        <h3>Planta</h3>
+                    </div>
+                    <div class="contenido">Medellin</div>
+                    <hr>
+                    <div class="contenido"> Bello</div>
+                </div>
+                <div class="mSolicitadas" id="mSolicitadas">
+                    <div class="titulo">
+                        <h3>Mixer Solicitadas</h3>
+                    </div>
+                    <div class="contenido">22</div>
+                    <hr>
+                    <div class="contenido">3</div>
+                </div>
+                <div class="mConfirmadas" id="mConfirmadas">
+                    <div class="titulo">
+                        <h3>Mixer Confirmadas</h3>
+                    </div>
+                    <div class="contenido">18</div>
+                    <hr>
+                    <div class="contenido">2</div>
+                </div>
+                <div class="hora" id="hora">
+                    <div class="titulo">
+                        <h3>Hora Arranque</h3>
+                    </div>
+                    <div class="contenido">06:00</div>
+                    <hr>
+                    <div class="contenido">09:00</div>
+                </div>
+                <div class="volumen" id="volumen">
+                    <div class="titulo">
+                        <h3>Volumen</h3>
+                    </div>
+                    <div class="contenido">324</div>
+                    <hr>
+                    <div class="contenido">26</div>
+                </div>
+                <div class="observaciones" id="observaciones">
+                    <div class="titulo">
+                        <h3>Observaciones</h3>
+                    </div>
+                    <div class="contenido">
+                        Diseños especiales: C210224500 - C280289100 - T280225300
+                    </div>
+                    <hr>
+                    <div class="contenido">
+                        Diseños especiales: C210224500
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <div class="sidebar" id="sidebar">
+            <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
+            <form action="#" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-input" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-input" required>
+
+                <input type="submit" value="Log In" class="form-submit">
+            </form>
+        </div>
+
+        <div class="content">
+            <!-- Contenido de la página aquí -->
+        </div>
+
+        <script>
+            function toggleSidebar() {
+                var sidebar = document.getElementById("sidebar");
+                sidebar.classList.toggle("hide");
+            }
+        </script>
+
+        <footer>
+            <h3>creado por: Equipo de PHP</h3>
+            <h2>Redes Sociales</h2>
+        </footer>
+
+    </div>
+
+</body>
+</html>
