@@ -6,7 +6,7 @@
 
 body {
     background: #242424;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .contenedor {
@@ -29,17 +29,33 @@ header {
     align-items: center;
 }
 
-    header .menu a {
-        color: #071d49;
-        text-decoration: none;
-        margin-right: 40px;
-        font-size: 22px;
-        font-weight: bold;
-    }
+header .menu a {
+    color: #071d49;
+    text-decoration: none;
+    margin-right: 40px;
+    font-size: 22px;
+    font-weight: bold;
+}
 
-        header .menu a:hover {
-            text-decoration: underline;
-        }
+header .menu a:hover {
+    text-decoration: underline;
+}
+
+header .menu .btnside {
+    color: #071d49;
+    border: 0;
+    background: #00000000;
+    text-decoration: none;
+    margin-right: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    font-weight:bold;
+}
+
+header .menu .btnside:hover {
+    text-decoration: underline;
+}
 
 .main {
     background: #fff;
@@ -53,22 +69,75 @@ header {
 
 .informe {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.titulo {
-    margin: 10px;
+.titulos {
+    margin: 20px;
+    width: 90%;
     height: 40px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.titulos .h3 {
+    margin: 20px;
+}
+
+.planta, .mSolicitadas, .mConfirmadas, .hora, .volumen{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.observaciones{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.titulos .observaciones{
+    justify-content: center;
+}
+
+.separador{
+    width: 100%;
+}
+.separador hr{
+    height: 2px;
+    width: 100%;
+}
+
+.separadorInt{
+    width: 100%;
+}
+
+.separadorInt hr{
+    height: 1px;
 }
 
 .contenido {
-    margin: 10px 0;
-    font-size: 14px;
+    width: 90%;
+    height: 50px;
+    font-size: 16px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
     text-align: center;
-    height: 26px;
+
+}
+
+.contenido h3 {
+    font-size: 12px;
 }
 
 footer {
@@ -79,4 +148,5 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: 14px;
 }

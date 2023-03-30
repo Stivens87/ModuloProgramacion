@@ -7,20 +7,38 @@ body {
     position: fixed;
     top: 100px;
     left: 0;
-    width: 200px;
-    height: 70%;
+    width: 260px;
+    height: 50%;
     background-color: #071d49;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    /* align-content:space-evenly; */
+    justify-content: space-evenly;
     padding: 20px;
     box-sizing: border-box;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.7s ease-in-out;
+    
 }
 
-    .sidebar.hide {
-        transform: translateX(-200px);
-    }
+.sidebar.hide {
+    transform: translateX(-260px);
+}
+
+.sidebar a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #8a8a8a;
+}
+
+.sidebar a:hover{
+    color: #fff;
+}
 
 .form-input {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     display: block;
     width: 100%;
     padding: 5px;
@@ -30,15 +48,18 @@ body {
 }
 
 .form-submit {
-    display: block;
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
     background-color: #C4D600;
     color: #071D49;
     cursor: pointer;
+}
+
+#log_out{
+    width: 90%;
 }
 
 .toggle-button {
@@ -51,6 +72,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    
 }
 
 label {
