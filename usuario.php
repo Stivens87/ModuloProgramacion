@@ -54,16 +54,16 @@ class Usuario {
         }
     }
     
-    public function buscarUsuario(){
-        $p1 = 2;
-        $sql = "{CALL buscar_usuario (?)}"; 
+    public function buscarUsuario($user, $pass){
+        $sql = "{CALL log_in (?,?)}"; 
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(1, $p1, PDO::PARAM_INT);
+        $stmt->bindParam(1, $user, PDO::PARAM_STR);
+        $stmt->bindParam(2, $pass, PDO::PARAM_INT);
         $stmt->execute();
         while ($row = $stmt->fetch()) {
-            $valor = $row['username'];
+            $encontrado = $row['nombre'];
         }
-        return $valor;
+        return $encontrado;
     }
 
     

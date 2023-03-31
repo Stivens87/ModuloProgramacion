@@ -102,7 +102,7 @@
 
         <div class="sidebar" id="sidebar">
             <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
-            <form action="#" method="post">
+            <form action="index.php" method="post">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" class="form-input" required>
 
@@ -132,13 +132,18 @@
     <?php
 
     require_once 'usuario.php';
-    $usuario = new Usuario();
-    $a =  $usuario -> buscarUsuario();
-    
-    echo "<script>alert('Usuario Logueado. Buenvenido  $a');</script>";
-    
 
-    //$usuario -> buscar();
+    $username = $_POST ["username"];
+    $password = $_POST ["password"];
+
+    $usuario = new Usuario();
+    $log =  $usuario -> buscarUsuario($username, $password);
+
+    if($log==null){
+        echo "<script>alert('Error de usuario o Contraseña');</script>";
+    }
+
+    echo "<script>alert('Usuario Logueado. Buenvenido:  $log');</script>";
 
     ?>
 
