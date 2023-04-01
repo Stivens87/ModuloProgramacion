@@ -58,10 +58,6 @@ body {
     cursor: pointer;
 }
 
-#log_out{
-    /* width: 80%; */
-}
-
 .toggle-button {
     position: absolute;
     top: 10px;
