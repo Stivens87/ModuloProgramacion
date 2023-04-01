@@ -22,87 +22,12 @@
             </nav>
         </header>
         <section class="main">
-            <article>
-                <div class="fecha"><h4>26/03/2023</h4></div>
-            </article>
-            <hr>
-            <article class="informe">
 
-                <div class="titulos">
-                    <div class="planta">
-                        <h3>Planta</h3>
-                    </div>
-                    <div class="mSolicitadas">
-                        <h3>Mixer Solicitadas</h3>
-                    </div>
-                    <div class="mConfirmadas">
-                        <h3>Mixer Confirmadas</h3>
-                    </div>
-                    <div class="hora">
-                        <h3>Hora Arranque</h3>
-                    </div>
-                    <div class="volumen">
-                        <h3>Volumen</h3>
-                    </div>
-                    <div class="observaciones">
-                        <h3>Observaciones</h3>
-                    </div>
-                </div>
-                <div class="separador">
-                    <hr>
-                </div>
-                
-                <div class="contenido">
-                    <div class="planta">
-                        <h3>Medellin</h3>
-                    </div>
-                    <div class="mSolicitadas">
-                        <h3>22</h3>
-                    </div>
-                    <div class="mConfirmadas">
-                        <h3>19</h3>
-                    </div>
-                    <div class="hora">
-                        <h3>06:00</h3>
-                    </div>
-                    <div class="volumen">
-                        <h3>432</h3>
-                    </div>
-                    <div class="observaciones">
-                        <h3>Diseños especiales: C210224500 - C280289100 - T280225300</h3>
-                    </div>
-                </div>
-
-                <div class="separadorInt">
-                    <hr>
-                </div>
-
-                <div class="contenido">
-                    <div class="planta">
-                        <h3>Bello</h3>
-                    </div>
-                    <div class="mSolicitadas">
-                        <h3>3</h3>
-                    </div>
-                    <div class="mConfirmadas">
-                        <h3>2</h3>
-                    </div>
-                    <div class="hora">
-                        <h3>09:20</h3>
-                    </div>
-                    <div class="volumen">
-                        <h3>65</h3>
-                    </div>
-                    <div class="observaciones">
-                        <h3>Diseños especiales: C210224500 - T280225300</h3>
-                    </div>
-                </div>
-            </article>
         </section>
 
         <div class="sidebar" id="sidebar">
             <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
-            <form action="index.php" method="post">
+            <form action="login.php" method="post">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" class="form-input" required>
 
@@ -110,8 +35,10 @@
                 <input type="password" id="password" name="password" class="form-input" required>
 
                 <input type="submit" value="Log In" class="form-submit">
-            </form>
+                <br><br>
                 <button class="form-submit" id="log_out"> Log Out</button>
+            </form>
+
                 <a href="#"><h3>Olvidé mi contraseña</h3></a>
         </div>
 
@@ -128,25 +55,6 @@
         </footer>
 
     </div>
-
-    <?php
-
-    require_once 'usuario.php';
-
-    $username = $_POST ["username"];
-    $password = $_POST ["password"];
-
-    $usuario = new Usuario();
-    $log =  $usuario -> buscarUsuario($username, $password);
-
-    if($log==null){
-        echo "<script>alert('Error de usuario o Contraseña');</script>";
-    }
-
-    echo "<script>alert('Usuario Logueado. Buenvenido:  $log');</script>";
-
-    ?>
-
 
 </body>
 </html>

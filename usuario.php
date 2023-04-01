@@ -58,7 +58,7 @@ class Usuario {
         $sql = "{CALL log_in (?,?)}"; 
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(1, $user, PDO::PARAM_STR);
-        $stmt->bindParam(2, $pass, PDO::PARAM_INT);
+        $stmt->bindParam(2, $pass, PDO::PARAM_STR);
         $stmt->execute();
         while ($row = $stmt->fetch()) {
             $encontrado = $row['nombre'];
