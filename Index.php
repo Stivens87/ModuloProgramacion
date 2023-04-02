@@ -39,13 +39,17 @@
 
                 <input type="submit" value="Log In" class="form-submit">
                 <br><br>
-                <button class="form-submit" id="log_out"> Log Out</button>
+                <button class="form-submit_dis" id="log_out" disabled> Log Out</button>
                 <br><br>
+                
                 <div id="sidebar">
                 <button class="form-submit" id="create-account-btn">Create an account</button>
                 </div>
             </form>
-
+            <!-- <form action="registro.php" method="post" id="form_registro">
+                <button class="form-submit" name="registro" id="registro"> Crear cuenta</button>
+            </form> -->
+                
                 <a href="#"><h3>Olvidé mi contraseña</h3></a>
         </div>
 
@@ -60,10 +64,6 @@
             <h3>creado por: Equipo de PHP</h3>
             <h3>Redes Sociales</h3>
         </footer>
-<<<<<<< HEAD
-            
-=======
->>>>>>> 997ea4fea1ab5e88aaa876b0b4f8f5f107df63b2
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/sidebar.js"></script>

@@ -161,17 +161,13 @@
 
     $username = $_POST ["username"];
     $password = $_POST ["password"];
-    
-    $fecha_actual = date("Y-m-d");
-    
+      
     $usuario = new Usuario();
     $nombre =  $usuario -> buscarUsuario($username, $password);
-    echo "<script>alert('Fecha actual es:  $fecha_actual');";
     if($nombre==null){
         echo "<script>alert('Error de usuario o Contraseña');</script>";
     }else{
         echo "<script>alert('Usuario Logueado. Buenvenido:  $nombre');</script>";
-        // echo "document.getElementById('fecha').value = $fecha_actual;</script>";
     }
 
     
