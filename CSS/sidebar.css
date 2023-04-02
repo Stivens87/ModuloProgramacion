@@ -19,8 +19,7 @@ body {
     justify-content: space-evenly;
     padding: 20px;
     box-sizing: border-box;
-    transition: all 0.7s ease-in-out;
-    
+    transition: all 0.7s ease-in-out;    
 }
 
 .sidebar.hide {
@@ -67,11 +66,10 @@ body {
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);    
 }
 
-label {
+label{
     color: #C4D600;
     text-decoration-color: #C4D600;
 }

@@ -37,6 +37,10 @@
                 <input type="submit" value="Log In" class="form-submit">
                 <br><br>
                 <button class="form-submit" id="log_out"> Log Out</button>
+                <br><br>
+                <div id="sidebar">
+                <button class="form-submit" id="create-account-btn">Create an account</button>
+                </div>
             </form>
 
                 <a href="#"><h3>Olvidé mi contraseña</h3></a>
@@ -48,13 +52,13 @@
                 sidebar.classList.toggle("hide");
             }
         </script>
-
+        
         <footer>
             <h3>creado por: Equipo de PHP</h3>
             <h3>Redes Sociales</h3>
         </footer>
-
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/sidebar.js"></script>
 </body>
 </html>
