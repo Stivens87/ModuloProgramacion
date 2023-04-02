@@ -64,9 +64,18 @@ class Usuario {
             $encontrado = $row['nombre'];
         }
         return $encontrado;
-    }
-
-    
+    }    
+    public function registrarUsuario($user, $pass){
+        $sql = "{CALL log_in (?,?)}"; 
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(1, $user, PDO::PARAM_STR);
+        $stmt->bindParam(2, $pass, PDO::PARAM_STR);
+        $stmt->execute();
+        while ($row = $stmt->fetch()) {
+            $encontrado = $row['nombre'];
+        }
+        return $encontrado;
+    }    
 }
 
 
