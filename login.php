@@ -23,7 +23,7 @@
         </header>
         <section class="main">
             <article>
-                <div class="fecha"><h4>26/03/2023</h4></div>
+                <div class="fecha" id="fecha"><?php echo date('d-m-Y'); ?></div>
             </article>
             <hr>
             <article class="informe">
@@ -97,7 +97,9 @@
                         <h3>Diseños especiales: C210224500 - T280225300</h3>
                     </div>
 
-                    <div class="separadorInt">
+                </div>
+
+                <div class="separadorInt">
                         <hr>
                     </div>
 
@@ -120,8 +122,6 @@
                     <div class="observaciones">
                         <h3>-</h3>
                     </div>
-
-                </div>
             </article>
         </section>
 
@@ -161,15 +161,22 @@
 
     $username = $_POST ["username"];
     $password = $_POST ["password"];
-
+    
+    $fecha_actual = date("Y-m-d");
+    
     $usuario = new Usuario();
     $nombre =  $usuario -> buscarUsuario($username, $password);
-
+    echo "<script>alert('Fecha actual es:  $fecha_actual');";
     if($nombre==null){
         echo "<script>alert('Error de usuario o Contraseña');</script>";
     }else{
         echo "<script>alert('Usuario Logueado. Buenvenido:  $nombre');</script>";
+        // echo "document.getElementById('fecha').value = $fecha_actual;</script>";
     }
+
+    
+
+    
 
     
 

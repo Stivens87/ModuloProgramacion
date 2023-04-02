@@ -63,8 +63,10 @@ header .menu .btnside:hover {
     width: 100%;
 }
 
-.fecha {
+.fecha{
     margin-bottom: 20px;
+    font-size: 20px;
+    color: #071d49;
 }
 
 .informe {

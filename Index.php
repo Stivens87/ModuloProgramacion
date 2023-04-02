@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="Img/logo_argos_miniature.png" />
     <link rel="stylesheet" href="CSS/sidebar.css">
     <link rel="stylesheet" href="CSS/index.css">
+    <script src="Scripts/login.js"></script>
     <title>Informe Programación</title>
 </head>
 <body>
@@ -16,18 +17,20 @@
                 <img src="Img/logo-argos.png" alt="Argos" height="80px">
             </div>
             <nav class="menu">
-                <a href="#">Inicio</a>
+                <a href="#">Inicios</a>
                 <a href="#">Zona</a>
                 <button class="btnside" onclick="toggleSidebar()">Login</button>
             </nav>
         </header>
         <section class="main">
-
+            <div class="branding">
+                <img src="" alt="">
+            </div>
         </section>
 
         <div class="sidebar" id="sidebar">
             <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
-            <form action="login.php" method="post">
+            <form action="login.php" method="post" >
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" class="form-input" required>
 
@@ -53,7 +56,7 @@
             <h3>creado por: Equipo de PHP</h3>
             <h3>Redes Sociales</h3>
         </footer>
-
+            
     </div>
 
 </body>

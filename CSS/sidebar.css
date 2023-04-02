@@ -6,7 +6,7 @@ body {
 .sidebar {
     position: fixed;
     top: 100px;
-    left: 0;
+    right: 0;
     width: 260px;
     height: 50%;
     background-color: #071d49;
@@ -15,7 +15,6 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    /* align-content:space-evenly; */
     justify-content: space-evenly;
     padding: 20px;
     box-sizing: border-box;
@@ -24,7 +23,7 @@ body {
 }
 
 .sidebar.hide {
-    transform: translateX(-260px);
+    transform: translateX(260px);
 }
 
 .sidebar a {
@@ -61,10 +60,10 @@ body {
 .toggle-button {
     position: absolute;
     top: 10px;
-    right: -20px;
+    left: -28px;
     background-color: #C4D600;
     color: #fff;
-    padding: 10px;
+    padding: 20px;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
