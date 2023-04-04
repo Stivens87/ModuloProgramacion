@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="CSS/index.css">
     <title>Informe Programación</title>
 </head>
+
 <body>
     <div class="contenedor">
         <header>
@@ -51,7 +53,7 @@
                 <div class="separador">
                     <hr>
                 </div>
-                
+
                 <div class="contenido">
                     <div class="planta">
                         <h3>Medellin</h3>
@@ -67,6 +69,31 @@
                     </div>
                     <div class="volumen">
                         <h3>432</h3>
+                    </div>
+                    <div class="observaciones">
+                        <h3>Diseños especiales: C210224500 - C280289100 - T280225300</h3>
+                    </div>
+                </div>
+
+                <div class="separadorInt">
+                    <hr>
+                </div>
+
+                <div class="contenido">
+                    <div class="planta">
+                        <h3>Manizalez</h3>
+                    </div>
+                    <div class="mSolicitadas">
+                        <h3>30</h3>
+                    </div>
+                    <div class="mConfirmadas">
+                        <h3>12</h3>
+                    </div>
+                    <div class="hora">
+                        <h3>06:30</h3>
+                    </div>
+                    <div class="volumen">
+                        <h3>380</h3>
                     </div>
                     <div class="observaciones">
                         <h3>Diseños especiales: C210224500 - C280289100 - T280225300</h3>
@@ -100,8 +127,8 @@
                 </div>
 
                 <div class="separadorInt">
-                        <hr>
-                    </div>
+                    <hr>
+                </div>
 
                 <div class="contenido">
                     <div class="planta">
@@ -137,8 +164,14 @@
                 <input type="submit" value="Log In" class="form-submit">
                 <br><br>
                 <button class="form-submit" id="log_out"> Log Out</button>
+                <br><br>
+                <div id="sidebar">
+                    <button class="form-submit" id="create-account-btn">Create an account</button>
+                </div>
             </form>
-                <a href="#"><h3>Olvidé mi contraseña</h3></a>
+            <a href="#">
+                <h3>Olvidé mi contraseña</h3>
+            </a>
         </div>
 
         <script>
@@ -159,25 +192,21 @@
 
     require_once 'usuario.php';
 
-    $username = $_POST ["username"];
-    $password = $_POST ["password"];
-      
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
     $usuario = new Usuario();
-    $nombre =  $usuario -> buscarUsuario($username, $password);
-    if($nombre==null){
+    $nombre =  $usuario->buscarUsuario($username, $password);
+    if ($nombre == null) {
         echo "<script>alert('Error de usuario o Contraseña');</script>";
-    }else{
+    } else {
         echo "<script>alert('Usuario Logueado. Buenvenido:  $nombre');</script>";
     }
 
-    
-
-    
-
-    
-
     ?>
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/sidebar.js"></script>
 </body>
+
 </html>

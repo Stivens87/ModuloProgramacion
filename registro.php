@@ -40,7 +40,8 @@
                 <input type="submit" value="Log In" class="form-submit">
                 <br><br>
                 <button class="form-submit_dis" id="log_out" disabled> Log Out</button>
-                <br><br>                
+                <br><br>
+                
                 <div id="sidebar">
                 <button class="form-submit" id="create-account-btn">Create an account</button>
                 </div>
@@ -66,5 +67,14 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/sidebar.js"></script>
+    <?php
+
+require_once 'usuario.php';
+// Crear una instancia de la clase Usuario
+$usuario = new Usuario();
+// Procesar el formulario de registro de usuarios
+$usuario->procesarFormulario();
+
+  ?>
 </body>
-</html>
+</html>  

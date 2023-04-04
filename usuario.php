@@ -64,7 +64,6 @@ class Usuario {
         }
         return $encontrado;
     }
-    
     public function procesarFormulario() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Obtener los datos del formulario
@@ -79,7 +78,7 @@ class Usuario {
         
         if ($ingresado) {
           // Redirigir al usuario a otra página
-          header('Location: Index.php');
+          echo "<script>alert('Usuario Registrado con exito!'); window.location.href='Index.php';</script>";
           exit;
         } else {
           echo 'Error al registrar el usuario.';
@@ -90,25 +89,20 @@ class Usuario {
       }
   }
 }
+    
     public function registrarUsuario($user, $pass, $nomb, $rol){
         $sql = "{CALL registrarUsuario (?,?,?,?)}"; 
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(1, $user, PDO::PARAM_STR);
         $stmt->bindParam(2, $pass, PDO::PARAM_STR);
-        $stmt->bindParam(2, $$nomb, PDO::PARAM_STR);
-        $stmt->bindParam(2, $rol, PDO::PARAM_INT);
+        $stmt->bindParam(3, $nomb, PDO::PARAM_STR);
+        $stmt->bindParam(4, $rol, PDO::PARAM_INT);
         $stmt->execute();
-        while ($row = $stmt->fetch()) {
-            $ingresado = $row['valor'];
-        }
-        return $ingresado;
+        // while ($row = $stmt->fetch()) {
+        //     $ingresado = $row['Return Value'];
+        // }
+        return true;
     }    
 }
 
-// Crear una instancia de la clase Usuario
-$usuario = new Usuario();
 
-// Procesar el formulario de registro de usuarios
-$usuario->procesarFormulario();
-
-?>
