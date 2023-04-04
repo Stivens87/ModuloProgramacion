@@ -4,7 +4,6 @@ class Usuario {
 
     private $id;
     private $nombre;
-
     private $db;
 
     public function __construct(){
@@ -64,14 +63,40 @@ class Usuario {
             $encontrado = $row['nombre'];
         }
         return $encontrado;
-    }    
+    }
+    
+    public function procesarFormulario() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Obtener los datos del formulario
+            $user = $_POST['username'];
+            $pass = $_POST['password'];
+            $nomb = $_POST['nombre'];
+            $rol = $_POST['rol'];
+        // Procesar los datos
+      if (!empty($user) && !empty($pass) && !empty($nomb) && !empty($rol)) {
+        // Llamar al método registrarUsuario()
+        $ingresado = $this->registrarUsuario($user, $pass, $nomb, $rol);
+        
+        if ($ingresado) {
+          // Redirigir al usuario a otra página
+          header('Location: Index.php');
+          exit;
+        } else {
+          echo 'Error al registrar el usuario.';
+        }        
+      } else {
+        // Mostrar un mensaje de error si algún campo está vacío
+        echo 'Por favor, completa todos los campos.';
+      }
+  }
+}
     public function registrarUsuario($user, $pass, $nomb, $rol){
-        $sql = "{CALL registrar_usuario (?,?,?,?)}"; 
+        $sql = "{CALL registrarUsuario (?,?,?,?)}"; 
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(1, $user, PDO::PARAM_STR);
         $stmt->bindParam(2, $pass, PDO::PARAM_STR);
-        $stmt->bindParam(2, $$nomb, PDO::PARAM_STR);
-        $stmt->bindParam(2, $rol, PDO::PARAM_INT);
+        $stmt->bindParam(3, $$nomb, PDO::PARAM_STR);
+        $stmt->bindParam(4, $rol, PDO::PARAM_INT);
         $stmt->execute();
         while ($row = $stmt->fetch()) {
             $ingresado = $row['valor'];
@@ -80,5 +105,10 @@ class Usuario {
     }    
 }
 
+// Crear una instancia de la clase Usuario
+$usuario = new Usuario();
+
+// Procesar el formulario de registro de usuarios
+$usuario->procesarFormulario();
 
 ?>
