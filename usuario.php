@@ -95,8 +95,8 @@ class Usuario {
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(1, $user, PDO::PARAM_STR);
         $stmt->bindParam(2, $pass, PDO::PARAM_STR);
-        $stmt->bindParam(3, $$nomb, PDO::PARAM_STR);
-        $stmt->bindParam(4, $rol, PDO::PARAM_INT);
+        $stmt->bindParam(2, $$nomb, PDO::PARAM_STR);
+        $stmt->bindParam(2, $rol, PDO::PARAM_INT);
         $stmt->execute();
         while ($row = $stmt->fetch()) {
             $ingresado = $row['valor'];
