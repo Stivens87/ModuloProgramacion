@@ -1,7 +1,7 @@
 // Seleccionar el botón "Create an account"
 var createAccountBtn = document.querySelector('#create-account-btn');
 
-// Agregar un controlador de eventos para el clic en el botón "Create an account"
+// Agregar un controlador de eventos para el clic en el botón "Crear una cuenta"
 createAccountBtn.addEventListener('click', function() {
   // Crear un objeto XMLHttpRequest para cargar el contenido de registro.html
   var xhttp = new XMLHttpRequest();

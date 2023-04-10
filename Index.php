@@ -17,7 +17,7 @@
                 <img src="Img/logo-argos.png" alt="Argos" height="80px">
             </div>
             <nav class="menu">
-                <a href="#">Inicios</a>
+                <a href="http://localhost/moduloprogramacion/ModuloProgramacion">Inicio</a>
                 <a href="#">Zona</a>
                 <button class="btnside" onclick="toggleSidebar()">Login</button>
             </nav>
@@ -37,12 +37,12 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" class="form-input" required>
 
-                <input type="submit" value="Log In" class="form-submit">
+                <input type="submit" value="Ingresar" class="form-submit">
                 <br><br>
-                <button class="form-submit_dis" id="log_out" disabled> Log Out</button>
+                <button class="form-submit_dis" id="log_out" disabled> Cerrar Sesión</button>
                 <br><br>                
                 <div id="sidebar">
-                <button class="form-submit" id="create-account-btn">Create an account</button>
+                <button class="form-submit" id="create-account-btn">Crear cuenta</button>
                 </div>
             </form>
             <!-- <form action="registro.php" method="post" id="form_registro">
@@ -61,7 +61,19 @@
         
         <footer>
             <h3>creado por: Equipo de PHP</h3>
-            <h3>Redes Sociales</h3>
+            
+            <div class="redes">
+            <div class="redesIMG">
+                <h3>Redes Sociales</h3>
+            </div>
+                <div class="redesIMG">
+                    <a href="https://instagram.com/cementos_argos?igshid=YmMyMTA2M2Y="><img src="img/logo_inta.png" alt="Argos" height="30px"></a>
+                    <a href=""><img src="Img/logo_face.png" alt="Argos" height="30px"></a>
+                    <a href=""><img src="Img/logo_link.png" alt="Argos" height="30px"></a>
+                </div>
+            
+            </div>
+
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

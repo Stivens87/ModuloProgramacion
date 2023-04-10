@@ -18,7 +18,7 @@
                 <img src="Img/logo-argos.png" alt="Argos" height="80px">
             </div>
             <nav class="menu">
-                <a href="#">Inicio</a>
+                <a href="http://localhost/moduloprogramacion/ModuloProgramacion">Inicio</a>
                 <a href="#">Zona</a>
                 <button class="btnside" onclick="toggleSidebar()">Login</button>
             </nav>

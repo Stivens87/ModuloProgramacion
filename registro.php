@@ -46,9 +46,6 @@
                 <button class="form-submit" id="create-account-btn">Create an account</button>
                 </div>
             </form>
-            <!-- <form action="registro.php" method="post" id="form_registro">
-                <button class="form-submit" name="registro" id="registro"> Crear cuenta</button>
-            </form> -->
                 
                 <a href="#"><h3>Olvidé mi contraseña</h3></a>
         </div>
