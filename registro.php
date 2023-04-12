@@ -1,3 +1,7 @@
+<?php
+require_once "verificar_sesion.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,11 +43,11 @@
 
                 <input type="submit" value="Log In" class="form-submit">
                 <br><br>
-                <button class="form-submit_dis" id="log_out" disabled> Log Out</button>
+                <button class="form-submit_dis" id="log_out" disabled> Cerrar sesión</button>
                 <br><br>
                 
                 <div id="sidebar">
-                <button class="form-submit" id="create-account-btn">Create an account</button>
+                <button class="form-submit" id="create-account-btn">Registrar usuario</button>
                 </div>
             </form>
                 
@@ -59,7 +63,16 @@
         
         <footer>
             <h3>creado por: Equipo de PHP</h3>
-            <h3>Redes Sociales</h3>
+            
+            <div class="redes">
+                <div class="redesIMG">
+                <h3>Redes Sociales  </h3>
+                    <a href="https://instagram.com/cementos_argos?igshid=YmMyMTA2M2Y=" target="_blank"><img src="img/logo_inta.png" alt="Argos" height="30px"></a>
+                    <a href="https://www.facebook.com/cementosargos" target="_blank"><img src="Img/logo_face.png" alt="Argos" height="30px"></a>
+                    <a href="https://www.linkedin.com/company/cementos-argos/" target="_blank"><img src="Img/logo_link.png" alt="Argos" height="30px"></a>
+                    <a href="https://www.youtube.com/@cementosargos" target="_blank"><img src="Img/logo_you.png" alt="Argos" height="30px"></a>
+                </div>
+            </div>
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

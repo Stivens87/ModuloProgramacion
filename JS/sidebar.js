@@ -13,6 +13,6 @@ createAccountBtn.addEventListener('click', function() {
   });
 
   // Enviar una solicitud para obtener el contenido de registro.html
-  xhttp.open('GET', 'registro.html');
+  xhttp.open('GET', 'form_registro.php');
   xhttp.send();
 });

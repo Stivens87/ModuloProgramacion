@@ -1,3 +1,7 @@
+<?php
+require_once "verificar_sesion.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +32,7 @@
         <br><br>
         <button type="submit" class="form-submit">Registrarse</button>
         <br><br>
-        <a href="http://localhost/moduloprogramacion/ModuloProgramacion" class="form-submit">Atrás</a>
+        <a href="inicio.php" class="form-submit">Atrás</a>
       </form>
       
 

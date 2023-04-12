@@ -30,14 +30,14 @@
 
         <div class="sidebar" id="sidebar">
             <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
-            <form action="login.php" method="post" >
+            <form action="procesar_login.php" method="post" >
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" class="form-input" required>
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" class="form-input" required>
 
-                <input type="submit" value="Ingresar" class="form-submit">
+                <input type="submit" value="Iniciar sesión" class="form-submit">
                 <br><br>
                 <button class="form-submit_dis" id="log_out" disabled> Cerrar Sesión</button>
                 <br><br>                
@@ -63,17 +63,14 @@
             <h3>creado por: Equipo de PHP</h3>
             
             <div class="redes">
-            <div class="redesIMG">
-                <h3>Redes Sociales</h3>
-            </div>
                 <div class="redesIMG">
-                    <a href="https://instagram.com/cementos_argos?igshid=YmMyMTA2M2Y="><img src="img/logo_inta.png" alt="Argos" height="30px"></a>
-                    <a href=""><img src="Img/logo_face.png" alt="Argos" height="30px"></a>
-                    <a href=""><img src="Img/logo_link.png" alt="Argos" height="30px"></a>
+                <h3>Redes Sociales  </h3>
+                    <a href="https://instagram.com/cementos_argos?igshid=YmMyMTA2M2Y=" target="_blank"><img src="img/logo_inta.png" alt="Argos" height="30px"></a>
+                    <a href="https://www.facebook.com/cementosargos" target="_blank"><img src="Img/logo_face.png" alt="Argos" height="30px"></a>
+                    <a href="https://www.linkedin.com/company/cementos-argos/" target="_blank"><img src="Img/logo_link.png" alt="Argos" height="30px"></a>
+                    <a href="https://www.youtube.com/@cementosargos" target="_blank"><img src="Img/logo_you.png" alt="Argos" height="30px"></a>
                 </div>
-            
             </div>
-
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

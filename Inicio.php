@@ -1,3 +1,7 @@
+<?php
+require_once "verificar_sesion.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,8 +23,15 @@
             </div>
             <nav class="menu">
                 <a href="http://localhost/moduloprogramacion/ModuloProgramacion">Inicio</a>
-                <a href="#">Zona</a>
-                <button class="btnside" onclick="toggleSidebar()">Login</button>
+                <!-- <a href="#">Zona</a> -->
+                
+                    <a href="#" class="dropdown-link">Zona<span class="caret"></span></a>
+                <!-- <div class="dropdown-menu">
+                    <a href="#">Enlace 1</a>
+                    <a href="#">Enlace 2</a>
+                    <a href="#">Enlace 3</a>
+                </div> -->
+                <button class="btnside" onclick="toggleSidebar()"><?php echo $username; ?></button>
             </nav>
         </header>
         <section class="main">
@@ -154,24 +165,16 @@
 
         <div class="sidebar" id="sidebar">
             <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
-            <form action="index.php" method="post">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" class="form-input" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" class="form-input" required>
-
-                <input type="submit" value="Log In" class="form-submit">
+            <div class="tit">
+                <h3>Bienvenido, <?php echo $username; ?></h3>
+                <br><br><br><br>
+                <button class="form-submit" id="create-account-btn">Registrar usuario</button>
                 <br><br>
-                <button class="form-submit" id="log_out"> Log Out</button>
-                <br><br>
-                <div id="sidebar">
-                    <button class="form-submit" id="create-account-btn">Create an account</button>
-                </div>
-            </form>
-            <a href="#">
-                <h3>Olvidé mi contraseña</h3>
-            </a>
+            <div id="sidebar">
+                
+                <button class="form-submit" id="log_out"> Cerrar sesión</button>
+            </div>
+            </div>
         </div>
 
         <script>
@@ -181,29 +184,23 @@
             }
         </script>
 
-        <footer>
+<footer>
             <h3>creado por: Equipo de PHP</h3>
-            <h3>Redes Sociales</h3>
+            
+            <div class="redes">
+                <div class="redesIMG">
+                <h3>Redes Sociales  </h3>
+                    <a href="https://instagram.com/cementos_argos?igshid=YmMyMTA2M2Y=" target="_blank"><img src="img/logo_inta.png" alt="Argos" height="30px"></a>
+                    <a href="https://www.facebook.com/cementosargos" target="_blank"><img src="Img/logo_face.png" alt="Argos" height="30px"></a>
+                    <a href="https://www.linkedin.com/company/cementos-argos/" target="_blank"><img src="Img/logo_link.png" alt="Argos" height="30px"></a>
+                    <a href="https://www.youtube.com/@cementosargos" target="_blank"><img src="Img/logo_you.png" alt="Argos" height="30px"></a>
+                </div>
+            </div>
         </footer>
 
     </div>
 
-    <?php
 
-    require_once 'usuario.php';
-
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    $usuario = new Usuario();
-    $nombre =  $usuario->buscarUsuario($username, $password);
-    if ($nombre == null) {
-        echo "<script>alert('Error de usuario o Contraseña');</script>";
-    } else {
-        echo "<script>alert('Usuario Logueado. Buenvenido:  $nombre');</script>";
-    }
-
-    ?>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/sidebar.js"></script>
