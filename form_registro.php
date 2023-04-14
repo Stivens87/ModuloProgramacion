@@ -32,7 +32,7 @@ require_once "verificar_sesion.php";
         <br><br>
         <button type="submit" class="form-submit">Registrarse</button>
         <br><br>
-        <a href="inicio.php" class="form-submit">Atrás</a>
+        <a href="inicio.php" class="form-submit" id="create-account-btn">Atrás</a>
       </form>
       
 
