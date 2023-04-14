@@ -172,7 +172,6 @@ require_once "verificar_sesion.php";
                 <br><br>
             <div id="sidebar">
                 <a href="logout.php" class="form-submit">Cerrar Sesión</a>
-                <!-- <button class="form-submit" id="log_out"> Cerrar sesión</button> -->
             </div>
             </div>
         </div>

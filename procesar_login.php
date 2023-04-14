@@ -11,7 +11,7 @@ $usuario = new Usuario();
 $nombre =  $usuario->buscarUsuario($username, $password);
 if ($nombre == null) {
 
-    echo "<script>alert('Error de usuario o Contraseña');</script>";
+    echo "<script>alert('Error de usuario o Contraseña'); window.location='Index.php';</script>";
 
 } else {
     // echo "<script>alert('Usuario Logueado. Buenvenido:  $nombre');</script>";
