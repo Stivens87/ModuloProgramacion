@@ -171,8 +171,8 @@ require_once "verificar_sesion.php";
                 <button class="form-submit" id="create-account-btn">Registrar usuario</button>
                 <br><br>
             <div id="sidebar">
-                
-                <button class="form-submit" id="log_out"> Cerrar sesión</button>
+                <a href="logout.php" class="form-submit">Cerrar Sesión</a>
+                <!-- <button class="form-submit" id="log_out"> Cerrar sesión</button> -->
             </div>
             </div>
         </div>
