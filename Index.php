@@ -60,7 +60,7 @@
         </script>
         
         <footer>
-            <h3>creado por: Equipo de PHP</h3>
+            <h3>Creado por: Equipo de PHP</h3>
             
             <div class="redes">
                 <div class="redesIMG">
