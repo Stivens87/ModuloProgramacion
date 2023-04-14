@@ -25,12 +25,25 @@ body {
     transform: translateX(260px);
 }
 
+.sidebar h2{
+    color:  #C4D600;    
+}
+
 .sidebar a {
     font-size: 14px;
     text-decoration: none;
     color: #8a8a8a;
 }
-
+.sidebar #create-account-btn{
+     width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #C4D600;
+    color: #071D49;
+    cursor: pointer;
+} 
 .sidebar a:hover{
     color: #fff;
 }
@@ -86,9 +99,6 @@ body {
     color: #071D49;
     justify-content: center;
 }
-
-
-
 .toggle-button {
     position: absolute;
     top: 10px;

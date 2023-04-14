@@ -166,12 +166,12 @@ require_once "verificar_sesion.php";
         <div class="sidebar" id="sidebar">
             <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
             <div class="tit">
-                <h3>Bienvenido, <?php echo $username; ?></h3>
+                <h2>Bienvenido, <?php echo $username; ?></h2>
                 <br><br><br><br>
                 <button class="form-submit" id="create-account-btn">Registrar usuario</button>
                 <br><br>
             <div id="sidebar">
-                <a href="logout.php" class="form-submit">Cerrar Sesión</a>
+               <a href="logout.php" class="form-submit" id="create-account-btn">Cerrar Sesión</a>
             </div>
             </div>
         </div>
