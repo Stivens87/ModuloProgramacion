@@ -53,17 +53,18 @@ class Usuario {
         }
     }
     
-    public function buscarUsuario($user, $pass){
-        $sql = "{CALL log_in (?,?)}"; 
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(1, $user, PDO::PARAM_STR);
-        $stmt->bindParam(2, $pass, PDO::PARAM_STR);
-        $stmt->execute();
-        while ($row = $stmt->fetch()) {
-            $encontrado = $row['nombre'];
-        }
-        return $encontrado;
+public function buscarUsuario($user, $pass){
+    $sql = "{CALL log_in (?,?)}"; 
+    $stmt = $this->db->prepare($sql);
+    $stmt->bindParam(1, $user, PDO::PARAM_STR);
+    $stmt->bindParam(2, $pass, PDO::PARAM_STR);
+    $stmt->execute();
+    $encontrado = null; // Inicializar la variable $encontrado con un valor predeterminado
+    while ($row = $stmt->fetch()) {
+        $encontrado = $row['nombre'];
     }
+    return $encontrado;
+}
     public function procesarFormulario() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Obtener los datos del formulario
