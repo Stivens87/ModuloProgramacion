@@ -202,6 +202,32 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
 }
+.imagenes2{
+    margin: auto;
+    width: 100%;
+    background: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+    .tit_zo{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-around;
+
+
+    }
+
+    .tit_zo a{
+        font-size: 40px;
+        text-decoration: none;
+        color: #071d49;
+    }
+
 
 .imag {
 

@@ -29,19 +29,18 @@
             </div>
         </section>
 
-        <div class="imagenes">
-            <div class="imag">
-            <img src="Img/img.jpg" alt="img1" >
+        <div class="imagenes2">
+            <div class="tit_zo">
+                <a href="#">Norte</a>
+                <a href="#">Noroccidente</a>
+                <a href="#">Suroccidente</a>
+                <a href="#">Centro</a>
             </div>
+
             <div class="imag">
-            <img src="Img/img1.png" alt="img2">
+            <img src="Img/img5.jpg" alt="img1" >
             </div>
-            <div class="imag">
-            <img src="Img/img4.png" alt="img3">
-            </div>
-            <div class="imag">
-            <img src="Img/img3.png" alt="img4">
-            </div>
+
             
         </div>
 
