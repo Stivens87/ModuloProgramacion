@@ -26,11 +26,7 @@ require_once "verificar_sesion.php";
                 <!-- <a href="#">Zona</a> -->
                 
                     <a href="#" class="dropdown-link">Zona<span class="caret"></span></a>
-                <!-- <div class="dropdown-menu">
-                    <a href="#">Enlace 1</a>
-                    <a href="#">Enlace 2</a>
-                    <a href="#">Enlace 3</a>
-                </div> -->
+
                 <button class="btnside" onclick="toggleSidebar()"><?php echo $username; ?></button>
             </nav>
         </header>
@@ -166,7 +162,7 @@ require_once "verificar_sesion.php";
         <div class="sidebar" id="sidebar">
             <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
             <div class="tit">
-                <h2>Bienvenido, <?php echo $username; ?></h2>
+                <h2>Bienvenido <?php echo $username; ?></h2>
                 <br><br><br><br>
                 <button class="form-submit" id="create-account-btn">Registrar usuario</button>
                 <br><br>
@@ -195,7 +191,7 @@ require_once "verificar_sesion.php";
                     <a href="https://www.youtube.com/@cementosargos" target="_blank"><img src="Img/logo_you.png" alt="Argos" height="30px"></a>
                 </div>
             </div>
-        </footer>
+    </footer>
 
     </div>
 

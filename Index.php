@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="Img/logo_argos_miniature.png" />
     <link rel="stylesheet" href="CSS/sidebar.css">
     <link rel="stylesheet" href="CSS/index.css">
-    <script src="Scripts/login.js"></script>
+    <!-- <script src="Scripts/login.js"></script> -->
     <title>Informe Programación</title>
 </head>
 <body>
@@ -19,6 +19,7 @@
             <nav class="menu">
                 <a href="http://localhost/moduloprogramacion/ModuloProgramacion">Inicio</a>
                 <a href="#">Zona</a>
+
                 <button class="btnside" onclick="toggleSidebar()">Login</button>
             </nav>
         </header>
@@ -27,6 +28,22 @@
                 <img src="" alt="">
             </div>
         </section>
+
+        <div class="imagenes">
+            <div class="imag">
+            <img src="Img/img.jpg" alt="img1" >
+            </div>
+            <div class="imag">
+            <img src="Img/img1.png" alt="img2">
+            </div>
+            <div class="imag">
+            <img src="Img/img4.png" alt="img3">
+            </div>
+            <div class="imag">
+            <img src="Img/img3.png" alt="img4">
+            </div>
+            
+        </div>
 
         <div class="sidebar" id="sidebar">
             <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
@@ -54,8 +71,8 @@
 
         <script>
             function toggleSidebar() {
-                var sidebar = document.getElementById("sidebar");
-                sidebar.classList.toggle("hide");
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("hide");
             }
         </script>
         
@@ -64,7 +81,7 @@
             
             <div class="redes">
                 <div class="redesIMG">
-                <h3>Redes Sociales  </h3>
+                    <h3>Redes Sociales  </h3>
                     <a href="https://instagram.com/cementos_argos?igshid=YmMyMTA2M2Y=" target="_blank"><img src="img/logo_inta.png" alt="Argos" height="30px"></a>
                     <a href="https://www.facebook.com/cementosargos" target="_blank"><img src="Img/logo_face.png" alt="Argos" height="30px"></a>
                     <a href="https://www.linkedin.com/company/cementos-argos/" target="_blank"><img src="Img/logo_link.png" alt="Argos" height="30px"></a>

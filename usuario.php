@@ -64,6 +64,7 @@ class Usuario {
         }
         return $encontrado;
     }
+    
     public function procesarFormulario() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Obtener los datos del formulario
