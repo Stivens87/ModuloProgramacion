@@ -10,7 +10,7 @@ require_once "verificar_sesion.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="Img/logo_argos_miniature.png" />
     <link rel="stylesheet" href="CSS/sidebar.css">
-    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <script src="Scripts/login.js"></script>
     <title>Informe Programación</title>
 </head>

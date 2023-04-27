@@ -7,7 +7,7 @@ class Usuario {
     private $db;
 
     public function __construct(){
-        $this -> db = Database::conexionBD();
+        $this -> db = Database::DBconexion();
     }
 
     public function getId(){
@@ -42,11 +42,10 @@ class Usuario {
         $this -> db = null; //Validar esta instrucción (Si sí se requiere cerrar la conexión)
     }
 
-    public function buscar(){
-        $p1 = 1;
+    public function buscarPlanta($zona){
         $sql = "{CALL buscar_tbprueba_PA (?)}"; 
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(1, $p1, PDO::PARAM_INT);
+        $stmt->bindParam(1, $zona, PDO::PARAM_INT);
         $stmt->execute();
         while ($row = $stmt->fetch()) {
             echo $row['id'] . ", " . $row['nombre'] . "<br />";
@@ -92,7 +91,7 @@ class Usuario {
 }
     
     public function registrarUsuario($user, $pass, $nomb, $rol){
-        $sql = "{CALL registrarUsuario (?,?,?,?)}"; 
+        $sql = "{CALL registrar_Usuario (?,?,?,?)}"; 
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(1, $user, PDO::PARAM_STR);
         $stmt->bindParam(2, $pass, PDO::PARAM_STR);
