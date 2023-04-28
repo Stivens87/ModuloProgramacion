@@ -73,7 +73,7 @@ header .menu a {
     /* font-weight: bold; */
 }
 
-header .menu a .sub {
+header .menu form .sub {
     margin: 0;
     display: flex;
     flex-direction: row;
@@ -84,7 +84,7 @@ header .menu a .sub {
     font-weight: normal;
 }
 
-header .menu a .sub:hover {
+header .menu form .sub:hover {
     background: #071d49;
     color: #ffffff;
 

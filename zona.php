@@ -1,37 +1,59 @@
 <?php
 require_once 'db.php';
+require_once "verificar_sesion.php";
 
-class Zona{
-    private $db;
+?>
+<html lang="es">
+<!DOCTYPE html>
 
-    public function __construct(){
-        $this -> db = Database::DBconexion();
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="asstes/Img/logo_argos_miniature.png" />
+    <link rel="stylesheet" href="assets/CSS/sidebar.css">
+    <link rel="stylesheet" href="assets/CSS/index.css">
+    <title>Informe Programación</title>
+</head>
 
-    public function getdb(){
-        return $this -> db;
-    }
+<body>
+    <?php
+    class Zona
+    {
+        private $db;
 
-    public function calcularArranque($planta){
-        $sql = "{CALL calcular_arranque (?)}"; 
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(1, $planta, PDO::PARAM_STR);
-        $stmt->execute();
-        while ($row = $stmt->fetch()) {
-            $encontrado = $row['cargue'];
+        public function __construct()
+        {
+            $this->db = Database::DBconexion();
         }
-        return $encontrado;
-    }
 
-    public function buscarPlanta($zona){
-        $sql = "{CALL imprimir_info_planta (?)}"; 
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(1, $zona, PDO::PARAM_INT);
-        $stmt->execute();
-        while ($row = $stmt->fetch()) {
-            // echo $row['nombre'] . ", " . $row['volumen'] .  ", " . $row['Hora_Cargue'] . "<br />";
-            echo "
-            <div class='contenido'>
+        public function getdb()
+        {
+            return $this->db;
+        }
+
+        public function calcularArranque($planta)
+        {
+            $sql = "{CALL calcular_arranque (?)}";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $planta, PDO::PARAM_STR);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $encontrado = $row['cargue'];
+            }
+            return $encontrado;
+        }
+
+        public function buscarPlanta($zona)
+        {
+            $sql = "{CALL imprimir_info_planta (?)}";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $zona, PDO::PARAM_INT);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                // echo $row['nombre'] . ", " . $row['volumen'] . ", " . $row['Hora_Cargue'] . "<br />";
+                echo "
+                <div class='contenido'>
                     <div class='planta'>
                         <h3>" . $row['nombre'] . "</h3>
                     </div>
@@ -45,7 +67,7 @@ class Zona{
                         <h3>" . $row['Hora_Cargue'] . "</h3>
                     </div>
                     <div class='volumen'>
-                        <h3>" . $row['volumen'] .  "</h3>
+                        <h3>" . $row['volumen'] . "</h3>
                     </div>
                     <div class='observaciones'>
                         <h3>Diseños especiales: C210224500 - C280289100 - T280225300</h3>
@@ -55,9 +77,9 @@ class Zona{
                 <div class='separadorInt'>
                     <hr>
                 </div>
-            ";
+                ";
+            }
         }
     }
-}
 
-?>
+    ?>
