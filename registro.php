@@ -10,7 +10,7 @@ require_once "verificar_sesion.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="Img/logo_argos_miniature.png" />
     <link rel="stylesheet" href="CSS/sidebar.css">
-    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <script src="Scripts/login.js"></script>
     <title>Informe Programación</title>
 </head>
@@ -32,28 +32,6 @@ require_once "verificar_sesion.php";
             </div>
         </section>
 
-        <div class="sidebar" id="sidebar">
-            <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
-            <form action="login.php" method="post" >
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" class="form-input" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" class="form-input" required>
-
-                <input type="submit" value="Log In" class="form-submit">
-                <br><br>
-                <button class="form-submit_dis" id="log_out" disabled> Cerrar sesión</button>
-                <br><br>
-                
-                <div id="sidebar">
-                <button class="form-submit" id="create-account-btn">Registrar usuario</button>
-                </div>
-            </form>
-                
-                <a href="#"><h3>Olvidé mi contraseña</h3></a>
-        </div>
-
         <script>
             function toggleSidebar() {
                 var sidebar = document.getElementById("sidebar");
@@ -62,7 +40,7 @@ require_once "verificar_sesion.php";
         </script>
         
         <footer>
-            <h3>creado por: Equipo de PHP</h3>
+            <h3>Creado por: Equipo de PHP</h3>
             
             <div class="redes">
                 <div class="redesIMG">
@@ -79,12 +57,12 @@ require_once "verificar_sesion.php";
     <script src="js/sidebar.js"></script>
     <?php
 
-require_once 'usuario.php';
-// Crear una instancia de la clase Usuario
-$usuario = new Usuario();
-// Procesar el formulario de registro de usuarios
-$usuario->procesarFormulario();
+    require_once 'usuario.php';
+    // Crear una instancia de la clase Usuario
+    $usuario = new Usuario();
+    // Procesar el formulario de registro de usuarios
+    $usuario->procesarFormulario();
 
-  ?>
+    ?>
 </body>
 </html>  

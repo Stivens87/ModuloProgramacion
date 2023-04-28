@@ -15,7 +15,7 @@ if ($nombre == null) {
 } else {
     // echo "<script>alert('Usuario Logueado. Buenvenido:  $nombre');</script>";
     $_SESSION["username"] = $username;
-    header("Location: inicio.php");
+    header("Location: Inicio.php");
     exit();
 }
 

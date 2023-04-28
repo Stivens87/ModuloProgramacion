@@ -1,5 +1,6 @@
 <?php
 require_once "verificar_sesion.php";
+require_once "Zona.php";
 ?>
 
 <!DOCTYPE html>
@@ -9,31 +10,24 @@ require_once "verificar_sesion.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="Img/logo_argos_miniature.png" />
-    <link rel="stylesheet" href="CSS/sidebar.css">
-    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="shortcut icon" href="asstes/Img/logo_argos_miniature.png" />
+    <link rel="stylesheet" href="assets/CSS/sidebar.css">
+    <link rel="stylesheet" href="assets/CSS/index.css">
     <title>Informe Programación</title>
 </head>
 
 <body>
     <div class="contenedor">
-        <header>
-            <div class="logo" id="logo">
-                <img src="Img/logo-argos.png" alt="Argos" height="80px">
-            </div>
-            <nav class="menu">
-                <a href="http://localhost/moduloprogramacion/ModuloProgramacion">Inicio</a>
-                <!-- <a href="#">Zona</a> -->
-                
-                    <a href="#" class="dropdown-link">Zona<span class="caret"></span></a>
-                <!-- <div class="dropdown-menu">
-                    <a href="#">Enlace 1</a>
-                    <a href="#">Enlace 2</a>
-                    <a href="#">Enlace 3</a>
-                </div> -->
-                <button class="btnside" onclick="toggleSidebar()"><?php echo $username; ?></button>
-            </nav>
-        </header>
+        
+    <?php include('Views/layout/header.php');?>
+
+
+        <?php 
+        $zona = new Zona();
+        $planta;
+        ?>
+
+
         <section class="main">
             <article>
                 <div class="fecha" id="fecha"><?php echo date('d-m-Y'); ?></div>
@@ -52,7 +46,7 @@ require_once "verificar_sesion.php";
                         <h3>Mixer Confirmadas</h3>
                     </div>
                     <div class="hora">
-                        <h3>Hora Arranque</h3>
+                        <h3>Hora Arranque (hh:mm:ss)</h3>
                     </div>
                     <div class="volumen">
                         <h3>Volumen</h3>
@@ -76,7 +70,7 @@ require_once "verificar_sesion.php";
                         <h3>19</h3>
                     </div>
                     <div class="hora">
-                        <h3>06:00</h3>
+                        <h3><?php echo $zona->calcularArranque('502'); ?></h3>
                     </div>
                     <div class="volumen">
                         <h3>432</h3>
@@ -101,7 +95,7 @@ require_once "verificar_sesion.php";
                         <h3>12</h3>
                     </div>
                     <div class="hora">
-                        <h3>06:30</h3>
+                        <h3><?php echo $zona->calcularArranque('503'); ?></h3>
                     </div>
                     <div class="volumen">
                         <h3>380</h3>
@@ -126,7 +120,7 @@ require_once "verificar_sesion.php";
                         <h3>2</h3>
                     </div>
                     <div class="hora">
-                        <h3>09:20</h3>
+                        <h3><?php echo $zona->calcularArranque('505'); ?></h3>
                     </div>
                     <div class="volumen">
                         <h3>65</h3>
@@ -134,7 +128,6 @@ require_once "verificar_sesion.php";
                     <div class="observaciones">
                         <h3>Diseños especiales: C210224500 - T280225300</h3>
                     </div>
-
                 </div>
 
                 <div class="separadorInt">
@@ -152,7 +145,7 @@ require_once "verificar_sesion.php";
                         <h3>3</h3>
                     </div>
                     <div class="hora">
-                        <h3>07:20</h3>
+                        <h3><?php echo $zona->calcularArranque('610'); ?></h3>
                     </div>
                     <div class="volumen">
                         <h3>48</h3>
@@ -160,13 +153,70 @@ require_once "verificar_sesion.php";
                     <div class="observaciones">
                         <h3>-</h3>
                     </div>
+                </div>
+
+                <div class="separadorInt">
+                    <hr>
+                </div>
+
+
+                
+                
+                
+
+
+
+                <div class="contenido">
+                    <div class="planta">
+                        <h3>Prueba</h3>
+                    </div>
+                    <div class="mSolicitadas">
+                        <h3>4</h3>
+                    </div>
+                    <div class="mConfirmadas">
+                        <h3>3</h3>
+                    </div>
+                    <div class="hora">
+                        <h3><?php echo $zona->calcularArranque('610'); ?></h3>
+                    </div>
+                    <div class="volumen">
+                        <h3>48</h3>
+                    </div>
+                    <div class="observaciones">
+                        <h3>-</h3>
+                    </div>
+
+                    <form>
+                        <input type="checkbox" id="mostrarDiv" name="mostrarDiv" value="1" onclick="mostrarDiv()"> Mostrar div<br>
+                    </form>
+
+                </div>
+
+
+                <div id="miDiv" style="display: none;">
+                    Contenido del div que se mostrará al seleccionar el checkbox.
+                </div>
+
+                <script>
+                    function mostrarDiv() {
+                        var checkBox = document.getElementById("mostrarDiv");
+                        var div = document.getElementById("miDiv");
+                        if (checkBox.checked == true){
+                            div.style.display = "block";
+                        } else {
+                            div.style.display = "none";
+                        }
+                    }
+                </script>
+
+
             </article>
         </section>
 
         <div class="sidebar" id="sidebar">
             <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
             <div class="tit">
-                <h2>Bienvenido, <?php echo $username; ?></h2>
+                <h2>Bienvenido <?php echo $username; ?></h2>
                 <br><br><br><br>
                 <button class="form-submit" id="create-account-btn">Registrar usuario</button>
                 <br><br>
@@ -183,19 +233,7 @@ require_once "verificar_sesion.php";
             }
         </script>
 
-<footer>
-            <h3>creado por: Equipo de PHP</h3>
-            
-            <div class="redes">
-                <div class="redesIMG">
-                <h3>Redes Sociales  </h3>
-                    <a href="https://instagram.com/cementos_argos?igshid=YmMyMTA2M2Y=" target="_blank"><img src="img/logo_inta.png" alt="Argos" height="30px"></a>
-                    <a href="https://www.facebook.com/cementosargos" target="_blank"><img src="Img/logo_face.png" alt="Argos" height="30px"></a>
-                    <a href="https://www.linkedin.com/company/cementos-argos/" target="_blank"><img src="Img/logo_link.png" alt="Argos" height="30px"></a>
-                    <a href="https://www.youtube.com/@cementosargos" target="_blank"><img src="Img/logo_you.png" alt="Argos" height="30px"></a>
-                </div>
-            </div>
-        </footer>
+            <?php include 'Views/layout/footer.php' ?>
 
     </div>
 

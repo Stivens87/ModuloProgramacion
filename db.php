@@ -1,12 +1,12 @@
 <?php
 
 class Database{
-    static function conexionBD(){
+    static function dbconexion(){
 
         $host = "localhost";
         $username = "sa";
         $password = "123456";
-        $dbname = "programacionBD";
+        $dbname = "DBprogramacion";
         $port = 1433;
 
         try{
