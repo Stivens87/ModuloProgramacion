@@ -1,60 +1,56 @@
-#header {
+header {
+    width: 100%;
+    box-sizing: border-box;
     background: #B7DD2A;
     color: #ffffff;
-    height: 80px;
+    height: 96px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
   }
-
-  #header h1 {
-    margin: 0;
-    font-size: 24px;
-  }
-
-  #header ul {
+ 
+  header ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
   }
 
-  #header li {
+  header li {
     margin-left: 20px;
     position: relative;
   }
 
-  /* #header li:hover ul {
-    display: block;
-    margin: 0;
-  } */
-
-  #header li:hover ul {
+  header li:hover ul {
     display: flex;
     flex-direction: column;
     margin: 0;
   }
 
-  #header li:hover ul li{
+  header li:hover ul li{
     margin: 0;
     height: 40px;
   }
 
-  #header ul ul {
+  header ul ul {
     width: 164px;
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background-color: #ffffff;
-    padding: 5px;
+    padding: 0;
 
   }
 
-  #header ul ul li {
-    display: block;
-    margin: 2;
+  header ul li {
+    color: #071d49;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
   }
 
   .menu{
@@ -65,16 +61,42 @@
     justify-content: space-around;
 }
 
-header .menu a {
+header .menu a{
     color: #071d49;
     text-decoration: none;
     margin-right: 20px;
-    font-size: 20px;
-    /* font-weight: bold; */
+    font-size: 22px;
+    font-weight: bold;
 }
 
-header .menu form .sub {
+header .menu a:hover {
+  text-decoration: underline;
+}
+
+header .btnside {
+  color: #071d49;
+  border: 0;
+  background: #00000000;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer;
+  font-weight:bold;
+}
+
+header .menu .btnside:hover {
+  text-decoration: underline;
+}
+
+
+header form{
+  padding: 0;
+  margin: 0;
+}
+
+header .sub {
     margin: 0;
+    width: 100%;
+    border: #ffffff00;
     display: flex;
     flex-direction: row;
     align-items: center;

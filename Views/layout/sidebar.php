@@ -10,6 +10,22 @@
 <body>
     <div class="sidebar" id="sidebar">
             <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
+
+            <?php if(isset($_SESSION["username"])) { ?>
+            
+
+            <div class="tit">
+                <h2>Bienvenido <?php echo $_SESSION["username"]; ?></h2>
+                <br><br><br><br>
+                <button class="form-submit" id="create-account-btn">Registrar usuario</button>
+                <br><br>
+            <div id="sidebar">
+               <a href="logout.php" class="form-submit" id="create-account-btn">Cerrar Sesión</a>
+            </div>
+            </div>
+
+        <?php } else { ?>
+
             <form action="procesar_login.php" method="post" >
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" class="form-input" required>
@@ -25,11 +41,9 @@
                 <button class="form-submit" id="create-account-btn">Crear cuenta</button>
                 </div>
             </form>
-            <!-- <form action="registro.php" method="post" id="form_registro">
-                <button class="form-submit" name="registro" id="registro"> Crear cuenta</button>
-            </form> -->
                 
         <a href="#"><h3>Olvidé mi contraseña</h3></a>
+        <?php } ?>
     </div>
     <script>
             function toggleSidebar() {
@@ -37,5 +51,6 @@
             sidebar.classList.toggle("hide");
             }
         </script>
+        <script>toggleSidebar()</script>
 </body>
 </html>
