@@ -45,7 +45,7 @@
         <a href="#"><h3>Olvidé mi contraseña</h3></a>
         <?php } ?>
     </div>
-    <script>
+        <script>
             function toggleSidebar() {
             var sidebar = document.getElementById("sidebar");
             sidebar.classList.toggle("hide");

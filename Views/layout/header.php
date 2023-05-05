@@ -21,7 +21,7 @@
         <li>
           <a href="#">Zonas</a>
           <ul>
-            <form method="POST" action="Views/producto/Zonas.php">
+            <form method="POST" action="Zonas.php">
               <button class="sub" type="submit" name="zona" value="2">Norte</button>
               <button class="sub" type="submit" name="zona" value="3">Noroccidente</button>
               <button class="sub" type="submit" name="zona" value="1">Centro</button>

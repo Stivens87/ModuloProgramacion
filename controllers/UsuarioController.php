@@ -1,31 +1,12 @@
 <?php
-require_once 'config/db.php';
-class Usuario {
-
-    private $id;
-    private $nombre;
+require_once 'models/Usuario.php';
+class UsuarioController{
+    private $obUsuario;
     private $db;
-
     public function __construct(){
-        $this -> db = Database::DBconexion();
+        $this->obUsuario = new Usuario();
+        $this->db = $this->obUsuario->getdb();
     }
-
-    public function getId(){
-        return $this -> id;
-    }
-    public function setId($id){
-        $this -> id = $id;
-    }
-    public function getNombre(){
-        return $this -> nombre;
-    }
-    public function setNombre($nombre){
-        $this -> nombre = $nombre;
-    }
-    public function getdb(){
-        return $this -> db;
-    }
-
     public function leer(){
         // $sql = "{CALL leer_tbprueba_PA (?, ?)}";             //interrogación por cada parametro que lleve
         $sql = "{CALL leer_tbprueba_PA ()}";                    //"{CALL nombre_procedimiento_almacenado ()}"
@@ -102,7 +83,8 @@ class Usuario {
         //     $ingresado = $row['Return Value'];
         // }
         return true;
-    }    
+    }  
 }
 
 
+?>

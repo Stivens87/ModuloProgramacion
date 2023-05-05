@@ -1,12 +1,12 @@
 <?php
-require_once 'usuario.php';
+require_once 'controllers/UsuarioController.php';
 session_start();
 
 
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-$usuario = new Usuario();
+$usuario = new UsuarioController();
 $nombre =  $usuario->buscarUsuario($username, $password);
 if ($nombre == null) {
 
