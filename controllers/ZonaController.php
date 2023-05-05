@@ -1,22 +1,15 @@
 <?php
-require_once 'db.php';
-?>
-    <?php
-    class Zona
-    {
-        private $db;
+require_once 'models/Zona.php';
+class ZonaController{
+    private $obZona;
+    private $db;
 
-        public function __construct()
-        {
-            $this->db = Database::DBconexion();
-        }
+    public function __construct(){
+        $this->obZona = new Zona();
+        $this->db = $this->obZona->getdb();
+    }
 
-        public function getdb()
-        {
-            return $this->db;
-        }
-
-        public function calcularArranque($planta)
+    public function calcularArranque($planta)
         {
             $sql = "{CALL calcular_arranque (?)}";
             $stmt = $this->db->prepare($sql);
@@ -105,4 +98,4 @@ require_once 'db.php';
             }    
         }
     }
-    ?>
+?>

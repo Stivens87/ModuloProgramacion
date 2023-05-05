@@ -1,6 +1,6 @@
 <?php
-require_once "verificar_sesion.php";
-require_once "Zona.php";
+require_once 'config/verificar_sesion.php';
+require_once 'controllers/ZonaController.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ require_once "Zona.php";
         
         <?php include('Views/layout/header.php');?>
         <?php 
-            $obZona = new Zona();
+            $obZona = new ZonaController();
             $planta;
         ?>
         <section class="main" id="main">
@@ -77,7 +77,7 @@ require_once "Zona.php";
                     if (isset($_POST['zona'])) {
                     $zona = $_POST['zona'];
 
-                    $obZona = new Zona();
+                    $obZona = new ZonaController();
                     $obZona->buscarPlanta($zona);
                     $obZona->calcularTotalVol($zona);
                     }

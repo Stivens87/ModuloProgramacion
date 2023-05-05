@@ -1,6 +1,6 @@
 <?php
-require_once "verificar_sesion.php";
-require_once "Zona.php";
+require_once "config/verificar_sesion.php";
+require_once "controllers/ZonaController.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +20,8 @@ require_once "Zona.php";
         
     <?php include('Views/layout/header.php');?>
 
-
     <?php 
-        $zona = new Zona();
+        $zona = new ZonaController();
         $planta;
     ?>
 
@@ -59,31 +58,9 @@ require_once "Zona.php";
             var archivo = this.files[0];
             var url = URL.createObjectURL(archivo);
             alert(url);
-            // console.log(url);
-            // console.log(archivo);
-            // Puedes hacer lo que quieras con el archivo seleccionado aquí
         });
     </script>
-                <!-- <form>
-                    <input type="checkbox" id="mostrarDiv" name="mostrarDiv" value="1" onclick="mostrarDiv()"> Mostrar div<br>
-                </form>
-                <div id="miDiv" style="display: none;">
-                    Contenido del div que se mostrará al seleccionar el checkbox.
-                </div>
-
-                <script>
-                    function mostrarDiv() {
-                        var checkBox = document.getElementById("mostrarDiv");
-                        var div = document.getElementById("miDiv");
-                        if (checkBox.checked == true){
-                            div.style.display = "block";
-                        } else {
-                            div.style.display = "none";
-                        }
-                    }
-                </script> -->
-
-        </article>
+    </article>
     </section>
 
     <?php include 'Views/layout/sidebar.php' ?>
