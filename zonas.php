@@ -22,8 +22,8 @@ require_once "Zona.php";
         
         <?php include('Views/layout/header.php');?>
         <?php 
-        $obZona = new Zona();
-        $planta;
+            $obZona = new Zona();
+            $planta;
         ?>
         <section class="main" id="main">
             <article id="titulo_zona">

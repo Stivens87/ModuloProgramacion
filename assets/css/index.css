@@ -25,6 +25,28 @@ body {
     text-align:  center;
 }
 
+.btnEdit{
+    height: 40px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.btneditar{
+    background: #fff;
+    padding: 4px; /* Ajusta el relleno según tus necesidades */
+    font-size: 10px; /* Ajusta el tamaño de la fuente según tus necesidades */
+    border-width: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btneditar:hover{
+    background: #071d49;
+    color: #fff;
+}
+
+
 #btnCrearPdf{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 18px;

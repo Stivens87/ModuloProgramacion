@@ -59,7 +59,7 @@ require_once 'db.php';
                         
                     </div>
                     <div class='btnEdit'>
-                    <button id='editar' onClick='editarObs(" . $contador . ")'>editar</button>
+                    <button class='btneditar' onClick='editarObs(" . $contador . ")'>Editar</button>
                     </div>
                 </div>
 
