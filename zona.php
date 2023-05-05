@@ -1,22 +1,6 @@
 <?php
 require_once 'db.php';
-require_once "verificar_sesion.php";
-
 ?>
-<html lang="es">
-<!DOCTYPE html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="asstes/Img/logo_argos_miniature.png" />
-    <link rel="stylesheet" href="assets/CSS/sidebar.css">
-    <link rel="stylesheet" href="assets/CSS/index.css">
-    <title>Informe Programación</title>
-</head>
-
-<body>
     <?php
     class Zona
     {
@@ -50,8 +34,10 @@ require_once "verificar_sesion.php";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(1, $zona, PDO::PARAM_INT);
             $stmt->execute();
+            $contador = 0;
             while ($row = $stmt->fetch()) {
-                // echo $row['nombre'] . ", " . $row['volumen'] . ", " . $row['Hora_Cargue'] . "<br />";
+                $contador ++;
+                $id = "ob" . $contador;
                 echo "
                 <div class='contenido'>
                     <div class='planta'>
@@ -69,8 +55,11 @@ require_once "verificar_sesion.php";
                     <div class='volumen'>
                         <h3>" . $row['volumen'] . "</h3>
                     </div>
-                    <div class='observaciones'>
-                        <h3>Diseños especiales: C210224500 - C280289100 - T280225300</h3>
+                    <div class='observaciones' id=" . $id . ">
+                        
+                    </div>
+                    <div class='btnEdit'>
+                    <button id='editar' onClick='editarObs(" . $contador . ")'>editar</button>
                     </div>
                 </div>
 
@@ -80,6 +69,40 @@ require_once "verificar_sesion.php";
                 ";
             }
         }
-    }
 
+        function calcularTotalVol($zona){
+            $sql = "{CALL calcular_total_vol (?)}";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $zona, PDO::PARAM_INT);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                echo "
+                <div class='contenido'>
+                    <div class='planta'>
+                        <h3>  </h3>
+                    </div>
+                    <div class='mSolicitadas'>
+                        <h3>  </h3>
+                    </div>
+                    <div class='mConfirmadas'>
+                        <h3>  </h3>
+                    </div>
+                    <div class='hora'>
+                        <h3> Total: </h3>
+                    </div>
+                    <div class='volumen'>
+                        <h3>" . $row['volumen'] . "</h3>
+                    </div>
+                    <div class='observaciones'>
+                        
+                    </div>
+                </div>
+
+                <div class='separadorInt'>
+                    <hr>
+                </div>
+                ";
+            }    
+        }
+    }
     ?>

@@ -1,16 +1,3 @@
-// function exportarAPDF() {
-
-//     const doc = new jsPDF();
-    
-//     var art = document.getElementById('cont_export').innerHTML;
-    
-//     alert(art);
-//     const content = document.getElementById('cont_export').innerHTML;
-    
-//     doc.text(content, 10, 10);
-//     doc.saveAs('texto.pdf');
-//   }
-
 document.addEventListener("DOMContentLoaded", () => {
     // Escuchamos el click del botón
     const $boton = document.querySelector("#btnCrearPdf");

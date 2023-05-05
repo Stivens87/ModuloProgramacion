@@ -7,7 +7,6 @@ require_once "Zona.php";
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,22 +14,17 @@ require_once "Zona.php";
     <link rel="stylesheet" href="assets/CSS/index.css">
     <title>Informe Programación</title>
     <script src="JS/html2pdf.bundle.min.js"></script>
-    <script src="JS/guardarPDF.js"></script>
-
-    
+    <script src="JS/guardarPDF.js"></script> 
+    <script src="JS/editar.js"></script> 
 </head>
-
 <body>
     <div class="contenedor">
         
-    <?php include('Views/layout/header.php');?>
-
-
+        <?php include('Views/layout/header.php');?>
         <?php 
         $obZona = new Zona();
         $planta;
         ?>
-
         <section class="main" id="main">
             <article id="titulo_zona">
                 <div class="fecha" id="fecha"><?php echo date('d-m-Y'); ?></div>
@@ -80,21 +74,23 @@ require_once "Zona.php";
                 </div>
 
                 <?php 
-                  if (isset($_POST['zona'])) {
+                    if (isset($_POST['zona'])) {
                     $zona = $_POST['zona'];
 
                     $obZona = new Zona();
                     $obZona->buscarPlanta($zona);
-                }
+                    $obZona->calcularTotalVol($zona);
+                    }
                 ?>
-                <br>
-                <button id="btnCrearPdf">Exportar a PDF</button>
-             </article>
+            </article>
         </section>
-
+        <br>
+        <div class="botonpdf">
+            <button id="btnCrearPdf">Exportar a PDF</button>
+        </div>
+        <br>
         <?php include 'Views/layout/sidebar.php' ?>
         <?php include 'Views/layout/footer.php' ?>
-
     </div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
