@@ -15,17 +15,9 @@
 
         <div class="imagenes">
             <div class="imag">
-            <img src="assets/Img/img.jpg" alt="img1" >
+            <img src="assets/Img/Mixer (4).jpg" alt="img1" width="1300px">
             </div>
-            <div class="imag">
-            <img src="assets/Img/img1.png" alt="img2">
-            </div>
-            <div class="imag">
-            <img src="assets/Img/img4.png" alt="img3">
-            </div>
-            <div class="imag">
-            <img src="assets/Img/img3.png" alt="img4">
-            </div>
+        </div>
             
         </div>
         
