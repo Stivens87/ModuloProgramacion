@@ -1,6 +1,6 @@
 <?php
 // Configuración
-$tiempo_inactivo = 15; // 5 minutos
+$tiempo_inactivo = 300; // 5 minutos
 
 // Iniciar sesión
 session_start();

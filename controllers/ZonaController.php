@@ -27,33 +27,29 @@ class ZonaController{
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(1, $zona, PDO::PARAM_INT);
             $stmt->execute();
-            $contador = 0;
             while ($row = $stmt->fetch()) {
-                $contador ++;
-                $id = "ob" . $contador;
+
                 echo "
                 <div class='contenido'>
                     <div class='planta'>
                         <h3>" . $row['nombre'] . "</h3>
                     </div>
                     <div class='mSolicitadas'>
-                        <h3>XX</h3>
+                        <input class='dato' type='text'  value=' ' >
                     </div>
                     <div class='mConfirmadas'>
-                        <h3>XX</h3>
+                        <input class='dato' type='text'  value=' ' >
                     </div>
                     <div class='hora'>
-                        <h3>" . $row['Hora_Cargue'] . "</h3>
+                        <input class='dato' type='text' value=" . $row['Hora_Cargue'] . " >
                     </div>
                     <div class='volumen'>
-                        <h3>" . $row['volumen'] . "</h3>
+                        <input class='dato' type='text' value=" . $row['volumen'] . " >
                     </div>
-                    <div class='observaciones' id=" . $id . ">
-                        
+                    <div class='observaciones'>
+                        <input class='dato' type='text' value=' ' >   
                     </div>
-                    <div class='btnEdit'>
-                    <button class='btneditar' onClick='editarObs(" . $contador . ")'>Editar</button>
-                    </div>
+                    
                 </div>
 
                 <div class='separadorInt'>

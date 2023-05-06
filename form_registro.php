@@ -1,5 +1,5 @@
 <?php
-require_once "config/verificar_sesion.php";
+require_once "Views/producto/verificar_sesion.php";
 ?>
 
 <!DOCTYPE html>

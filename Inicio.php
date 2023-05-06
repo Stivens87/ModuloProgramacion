@@ -35,7 +35,7 @@ require_once "controllers/ZonaController.php";
 
             <div class="imagenes">
                 <div class="imag">
-                    <a href="prueba.php"> <img src="assets/Img/img.jpg" alt="img1" ></a> 
+                <img src="assets/Img/img.jpg" alt="img1" >
                 </div>
                     <div class="imag">
                     <img src="assets/Img/img1.png" alt="img2">

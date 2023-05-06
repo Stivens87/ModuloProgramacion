@@ -111,3 +111,13 @@ header .menu form .sub:hover {
     color: #ffffff;
 
 }
+
+.dato{
+  height: 30px;
+  width: 100%;
+  border: none;
+  background: #00000000;
+  font-size: 14px;
+  text-align: center;
+}
+
