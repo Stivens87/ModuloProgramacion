@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/Img/logo_argos_miniature.png" />
-    <link rel="stylesheet" href="asstets/CSS/index.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
     <title>Informe Programación</title>
 </head>
 <body>
@@ -13,15 +13,9 @@
 
         <?php include('Views/layout/header.php');?>
 
-        <section class="main">
-            <div class="branding">
-                <img src="" alt="">
-            </div>
-        </section>
-
         <div class="imagenes">
             <div class="imag">
-            <a href="prueba.php"> <img src="assets/Img/img.jpg" alt="img1" ></a> 
+            <img src="assets/Img/img.jpg" alt="img1" >
             </div>
             <div class="imag">
             <img src="assets/Img/img1.png" alt="img2">

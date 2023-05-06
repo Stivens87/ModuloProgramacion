@@ -1,5 +1,5 @@
 <?php
-require_once "Views/producto/verificar_sesion.php";
+require "Views/producto/verificar_sesion.php";
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ require_once "Views/producto/verificar_sesion.php";
     <script src="js/sidebar.js"></script>
     <?php
 
-    require_once 'usuario.php';
+    require_once 'controllers/UsuarioController.php';
     // Crear una instancia de la clase Usuario
     $usuario = new UsuarioController();
     // Procesar el formulario de registro de usuarios

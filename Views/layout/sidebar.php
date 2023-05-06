@@ -29,20 +29,17 @@
             <form action="procesar_login.php" method="post" >
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" class="form-input" required>
-
+                <br>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" class="form-input" required>
-
-                <input type="submit" value="Iniciar sesión" class="form-submit">
                 <br><br>
+                <input type="submit" value="Iniciar sesión" class="form-submit">
+                <br><br><br><br>
                 <button class="form-submit_dis" id="log_out" disabled> Cerrar Sesión</button>
                 <br><br>                
-                <div id="sidebar">
-                <button class="form-submit" id="create-account-btn">Crear cuenta</button>
-                </div>
-            </form>
-                
-        <a href="#"><h3>Olvidé mi contraseña</h3></a>
+           </form>
+            
+
         <?php } ?>
     </div>
         <script>
