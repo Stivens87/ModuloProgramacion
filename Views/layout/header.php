@@ -36,7 +36,6 @@
         <?php } ?>
         </li>
       </ul>
-
     </nav>
   </header>
 </body>

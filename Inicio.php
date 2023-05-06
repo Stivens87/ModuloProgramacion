@@ -33,6 +33,7 @@ require_once "controllers/ZonaController.php";
             <hr>
             <article class="informe">
 
+
             <div class="imagenes">
                 <div class="imag">
                 <img src="assets/Img/img.jpg" alt="img1" >
@@ -49,17 +50,6 @@ require_once "controllers/ZonaController.php";
             </div>
 
             <form>
-        <input type="file" name="archivo" id="archivo">
-        <br>
-        <input type="submit" value="Enviar">
-    </form>
-    <script>
-        document.getElementById('archivo').addEventListener('change', function(){
-            var archivo = this.files[0];
-            var url = URL.createObjectURL(archivo);
-            alert(url);
-        });
-    </script>
     </article>
     </section>
 

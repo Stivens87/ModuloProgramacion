@@ -21,33 +21,36 @@ class ZonaController{
             return $encontrado;
         }
 
-        public function buscarPlanta($zona)
+
+        public function buscarPlanta($zona, $usuario, $fecha)
         {
-            $sql = "{CALL imprimir_info_planta (?)}";
+            $sql = "{CALL consultar_informe (?, ?, ?)}";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(1, $zona, PDO::PARAM_INT);
+            $stmt->bindParam(2, $usuario, PDO::PARAM_INT);
+            $stmt->bindParam(3, $fecha, PDO::PARAM_STR);
             $stmt->execute();
             while ($row = $stmt->fetch()) {
 
                 echo "
                 <div class='contenido'>
                     <div class='planta'>
-                        <h3>" . $row['nombre'] . "</h3>
+                        <h3>" . $row['planta'] . "</h3>
                     </div>
                     <div class='mSolicitadas'>
-                        <input class='dato' type='text'  value=' ' >
+                        <input class='dato' type='text'  value=" . $row['msolicitadas'] . " >
                     </div>
                     <div class='mConfirmadas'>
-                        <input class='dato' type='text'  value=' ' >
+                        <input class='dato' type='text'  value=" . $row['mconfirmadas'] . " >
                     </div>
                     <div class='hora'>
-                        <input class='dato' type='text' value=" . $row['Hora_Cargue'] . " >
+                        <input class='dato' type='text' value=" . $row['horaArranque'] . " >
                     </div>
                     <div class='volumen'>
                         <input class='dato' type='text' value=" . $row['volumen'] . " >
                     </div>
                     <div class='observaciones'>
-                        <input class='dato' type='text' value=' ' >   
+                        <input class='dato' type='text' value=" . $row['observaciones'] . ">   
                     </div>
                     
                 </div>
@@ -58,6 +61,7 @@ class ZonaController{
                 ";
             }
         }
+
 
         function calcularTotalVol($zona){
             $sql = "{CALL calcular_total_vol (?)}";

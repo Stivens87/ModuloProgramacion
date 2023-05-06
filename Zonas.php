@@ -75,10 +75,12 @@ require_once 'controllers/ZonaController.php';
 
                 <?php 
                     if (isset($_POST['zona'])) {
-                    $zona = $_POST['zona'];
+                    $zona = intval($_POST['zona']);
+                    $fecha = date('d-m-Y');
+                    $usuario = 2;
 
                     $obZona = new ZonaController();
-                    $obZona->buscarPlanta($zona);
+                    $obZona->buscarPlanta($zona, $usuario, $fecha);
                     $obZona->calcularTotalVol($zona);
                     }
                 ?>
