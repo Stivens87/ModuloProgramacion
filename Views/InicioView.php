@@ -1,6 +1,5 @@
 <?php
-require_once "Views/producto/verificar_sesion.php";
-require_once "controllers/ZonaController.php";
+/* require_once "producto/verificar_sesion.php"; */
 ?>
 
 <!DOCTYPE html>
@@ -10,21 +9,18 @@ require_once "controllers/ZonaController.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="asstes/Img/logo_argos_miniature.png" />
+    <link rel="shortcut icon" href=".assets/Img/logo_argos_miniature.png" />
     <link rel="stylesheet" href="assets/CSS/index.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <title>Informe Programación</title>
 </head>
 
 <body>
     <div class="contenedor">
         
-    <?php include('Views/layout/header.php');?>
-
-    <?php 
-        $zona = new ZonaController();
-        $planta;
-    ?>
-
+    <?php include('layout/header.php');?>
 
     <section class="main">
         <article>
@@ -32,7 +28,6 @@ require_once "controllers/ZonaController.php";
             </article>
             <hr>
             <article class="informe">
-
 
             <div class="imagenes">
                 <div class="imag">
@@ -49,16 +44,15 @@ require_once "controllers/ZonaController.php";
                 </div>    
             </div>
 
-            <form>
     </article>
     </section>
 
-    <?php include 'Views/layout/sidebar.php' ?>
+    <?php include 'layout/sidebar.php' ?>
     
-    <?php include 'Views/layout/footer.php' ?>
+    <?php include 'layout/footer.php' ?>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/sidebar.js"></script>
+    <script src="assets/js/sidebar.js"></script>
 </body>
 
 </html>

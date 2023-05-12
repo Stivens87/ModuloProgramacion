@@ -26,7 +26,3 @@ if (isset($_SESSION['ultimo_actividad']) && (time() - $_SESSION['ultimo_activida
     $_SESSION['ultimo_actividad'] = time();
 }
 ?>
-
-
-
-

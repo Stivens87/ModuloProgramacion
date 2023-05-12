@@ -1,13 +1,12 @@
 <?php
-require_once 'config/db.php';
+
 class Usuario {
 
     private $id;
     private $nombre;
-    private $db;
-
+    
     public function __construct(){
-        $this -> db = Database::DBconexion();
+
     }
 
     public function getId(){
@@ -22,10 +21,5 @@ class Usuario {
     public function setNombre($nombre){
         $this -> nombre = $nombre;
     }
-    public function getdb(){
-        return $this -> db;
-    }
-  
+
 }
-
-

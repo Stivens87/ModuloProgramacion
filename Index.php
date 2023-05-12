@@ -1,31 +1,43 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/Img/logo_argos_miniature.png" />
-    <link rel="stylesheet" href="assets/css/index.css">
-    <title>Informe Programación</title>
-</head>
-<body>
-    <div class="contenedor">
+<?php
+require_once "config/global.php";
 
-        <?php include('Views/layout/header.php');?>
+/* Cargamos el controlador y ejecutamos la accion */
 
-        <div class="imagenes">
-            <div class="imagIndex">
-            <img src="assets/Img/Mixer (4).jpg" alt="img1">
-            </div>
-        </div>
-            
-        </div>
-        
-        <?php include('Views/layout/sidebar.php'); ?>
-        <?php include('Views/layout/footer.php'); ?> 
+if (isset($_GET["controller"]) || isset($_POST["controller"])) {
+    $controlador = isset($_GET["controller"]) ? $_GET["controller"] : $_POST["controller"];
+    $objControlador = cargarControlador($controlador);
+    ejecutarAccion($objControlador);
+} else {
+    $objControlador = cargarControlador(default_controller);
+    ejecutarAccion($objControlador);
+}
 
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/sidebar.js"></script>
-</body>
-</html>
+function cargarControlador($controlador)
+{
+    $clase = "{$controlador}Controller";
+    $archivo = "Controllers/{$controlador}Controller.php";
+    /* se valida que archivo exista efectivamente */
+    if (file_exists($archivo)) {
+        /* se instancia el archivo */
+        require_once $archivo;
+        $objControlador = new $clase();
+        return $objControlador;
+    } else {
+        return null;
+    }
+}
+function ejecutarAccion($objControlador)
+{
+
+    if (isset($_GET["action"]) || isset($_POST["action"])) {
+        $accion = isset($_GET["action"]) ? $_GET["action"] : $_POST["action"];
+        /* validar que la función Exista */
+        if (method_exists($objControlador, $accion)) {
+            $objControlador->{$accion}($_POST);
+        } else {
+            echo "<script> alert('Ocurrio un error');</script>";
+        }
+    } else {
+        $objControlador->{default_action}();
+    }
+}
