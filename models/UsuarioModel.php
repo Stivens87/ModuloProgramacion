@@ -68,8 +68,11 @@ class UsuarioModel
 
         $stmt->execute();
         while ($row = $stmt->fetch()) {
-            $encontrado = $row['nombre'];
+            $encontrado = $row;
         }
-        return $encontrado;
+        if(isset($encontrado)){
+            return $encontrado;
+        }
+        
     }
 }

@@ -5,6 +5,7 @@ class InicioController
 
     public function __construct()
     {
+       
     }
     public function index()
     {
@@ -12,7 +13,8 @@ class InicioController
         $this->vista("index",$datos);
     }
     public function Inicio()
-    {
+    { 
+        require_once  __DIR__ . "/../core/verificar_sesion.php";
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
@@ -25,4 +27,5 @@ class InicioController
         $datos;
         require_once  __DIR__ . "/../Views/" . $vista . "View.php";
     }
+    
 }

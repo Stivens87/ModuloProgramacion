@@ -14,6 +14,7 @@ if (isset($_GET["controller"]) || isset($_POST["controller"])) {
 
 function cargarControlador($controlador)
 {
+    
     $clase = "{$controlador}Controller";
     $archivo = "Controllers/{$controlador}Controller.php";
     /* se valida que archivo exista efectivamente */

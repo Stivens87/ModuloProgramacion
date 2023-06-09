@@ -9,6 +9,7 @@ class UsuarioController
     {
         require_once  __DIR__ . "/../core/Conexion.php";
         require_once  __DIR__ . "/../models/UsuarioModel.php";
+        
 
         $this->Conexion = new Conexion();
         $this->Connection = $this->Conexion->Conectar();
@@ -22,20 +23,22 @@ class UsuarioController
         $username = $post["username"];
         $password = $post["password"];
 
-        $nombre =  $usuarioModel->buscarUsuario($username, $password);
-        if ($nombre == null) {
+        $usuario =  $usuarioModel->buscarUsuario($username, $password);
+        if ($usuario == null) {
             echo "<script>alert('Error de usuario o Contraseña'); window.location='Index.php';</script>";
         } else {
             if (session_status() === PHP_SESSION_NONE) {
                 session_start();
             }
-            $_SESSION["username"] = $username;
+            $_SESSION["username"] = $usuario['username'];
+            $_SESSION["id"] = $usuario['id'];
             $this->vista("Inicio");
         }
     }
 
     public function logOut()
     {
+        session_unset();
         session_destroy();
         header("Location: index.php");
     }
@@ -43,6 +46,8 @@ class UsuarioController
 
     public function registrar($post)
     {
+        require_once  __DIR__ . "/../core/verificar_sesion.php";
+
         $usuarioModel = new UsuarioModel($this->Connection);
 
         // Obtener los datos del formulario
@@ -72,4 +77,5 @@ class UsuarioController
         $datos;
         require_once  __DIR__ . "/../Views/" . $vista . "View.php";
     }
+    
 }

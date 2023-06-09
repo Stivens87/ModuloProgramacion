@@ -13,7 +13,7 @@
         </div>
     <?php } else { ?>
 
-        <form action="index.php" method="post">
+        <form action="index.php?controller=Usuario&logIn" method="post">
             <input type="hidden" name="controller" value="Usuario"><input type="hidden" name="action" value="logIn">
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" class="form-input" required>

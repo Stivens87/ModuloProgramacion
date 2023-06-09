@@ -1,3 +1,7 @@
+<head>
+<link rel="stylesheet" href="assets/css/footer.css">
+</head>
+
 <footer>
     <h3>Creado por: Equipo de PHP</h3>
 
