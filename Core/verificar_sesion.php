@@ -1,7 +1,7 @@
 <?php
 
     // Configuración
-    $tiempo_inactivo = 1000; // 3 minutos
+    $tiempo_inactivo = 60; // 3 minutos
 
     // Iniciar sesión
     if (session_status() === PHP_SESSION_NONE) {

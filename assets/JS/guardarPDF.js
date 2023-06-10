@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 jsPDF: {
                     unit: "in",
                     format: "a3",
-                    orientation: 'portrait' // landscape o portrait
+                    orientation: 'portrait', // landscape o portrait
+                    autoSize: true // Ajuste automático del tamaño del PDF al contenido
                 }
             })
             .from($elementoParaConvertir)

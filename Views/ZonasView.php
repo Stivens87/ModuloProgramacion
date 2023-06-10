@@ -1,20 +1,5 @@
 <?php
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Capturar los valores de observaciones y plantas
-    $observaciones = $_POST['observaciones'];
-    $plantas = $_POST['plantas'];
-
-    // Llamar a la función con los valores capturados
-    //guardarInformacion($observaciones, $plantas);
-}
-
-// function guardarInformacion($observaciones, $plantas)
-// {
-
-// }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -36,6 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="contenedor">
         <?php include('layout/header.php'); ?>
         <section class="main" id="main">
+        <form action="index.php?controller=Zona&action=editarInforme" method="post">
+            <input type="hidden" name="zona" value="<?php echo $zona; ?>">
+            <input type="hidden" name="objPlantas" value="<?php echo $objPlantas; ?>">
+            
             <article id="titulo_zona">
                 <div class="fecha" id="fecha"><?php echo date('d-m-Y'); ?></div>
                 <div class="titulo_zona">
@@ -60,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </article>
             <hr>
+            
             <article class="informe">
 
                 <div class="titulos">
@@ -94,22 +84,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     foreach ($objPlantas as $planta) {
                         $contenedorPlantas .= "<div class='contenido'>
                         <div class='planta'>
-                            <h3>" . $planta['planta'] . "</h3>
+                            <input class='plantaaa' name='plantas[]' readonly value='". $planta['planta'] . "'>
                         </div>
                         <div class='mSolicitadas'>
-                            <input class='dato' type='text'  value=" . $planta['msolicitadas'] . " >
+                            <input class='dato' type='text'  value='" . $planta['msolicitadas'] . "' >
                         </div>
                         <div class='mConfirmadas'>
-                            <input class='dato' type='text'  value=" . $planta['mconfirmadas'] . " >
+                            <input class='dato' type='text'  value='" . $planta['mconfirmadas'] . "' >
                         </div>
                         <div class='hora'>
-                            <input class='dato' type='text' value=" . $planta['horaArranque'] . " >
+                            <input class='dato' type='text' value='" . $planta['horaArranque'] . "' >
                         </div>
                         <div class='volumen'>
-                            <input class='dato' type='text' value=" . $planta['volumen'] . " >
+                            <input class='dato' type='text' value='" . $planta['volumen'] . "' >
                         </div>
                         <div class='observaciones'>
-                            <input class='dato' type='text' value=" . $planta['observaciones'] . ">   
+                            <input class='dato observacion' name='observaciones[]' type='text' value=" . $planta['observaciones'] . ">   
                         </div>
                         </div>
                         <div class='separadorInt'>
@@ -152,38 +142,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </article>
         </section>
         <br>
-
         <div class="botonpdf">
-            <button id="btnGuardar" class="boton_zonas">Guardar</button>
+            <button id="btnGuardar" class="boton_zonas" type="submit">Guardar</button>
+
+        </div>
+        </form>
+        <br>
+        <div class="botonpdf">
             <button id="btnCrearPdf" class="boton_zonas">Exportar a PDF</button>
         </div>
-        <br>
     </div>
     <?php include 'layout/sidebar.php' ?>
     <?php include 'layout/footer.php' ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/JS/guardarPDF.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $("#btnGuardar").click(function() {
-                var observaciones = [];
-                var plantas = [];
-
-                // Obtener los valores de los inputs de observaciones y plantas
-                $(".dato-observaciones").each(function() {
-                    observaciones.push($(this).val());
-                });
-
-                $(".dato-plantas").each(function() {
-                    plantas.push($(this).val());
-                });
-
-                // Llamar a la función de guardar con los valores capturados
-                //guardarInformacion(observaciones, plantas);
-            });
-        });
-    </script>
 
 </body>
 

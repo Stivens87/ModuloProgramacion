@@ -55,19 +55,17 @@ class ZonaModel
         return $total_vol;
     }
 
-    function EditarInforme($planta, $obs)
+    function EditarInforme($planta, $observacion, $zona)
     {
 
-        $sql = "{CALL calcular_total_vol (?,?)}";
+        $sql = "{CALL Editar_Informe (?,?,?)}";
         $stmt = $this->con->prepare($sql);
         $stmt->bindParam(1, $planta, PDO::PARAM_STR);
-        $stmt->bindParam(2, $obs, PDO::PARAM_STR);
-        $stmt->execute();
-        // while ($row = $stmt->fetch()) {
+        $stmt->bindParam(2, $observacion, PDO::PARAM_STR);
+        $stmt->bindParam(3, $zona, PDO::PARAM_STR);
 
-        //     $total_vol = $row['volumen'];
-        // }
-        // return $total_vol;
+        $stmt->execute();
+
     }
 
 

@@ -64,6 +64,7 @@ body {
     background: #fff;
     padding: 20px;
     width: 100%;
+    height: auto;
 }
 
 .fecha{
@@ -86,6 +87,7 @@ body {
     width: 100%;
     height: 80px;
     text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
     font-size: 14px;
@@ -96,7 +98,7 @@ body {
     
 }
 
-.planta, .mSolicitadas, .mConfirmadas, .hora, .volumen{
+.mSolicitadas, .mConfirmadas, .hora, .volumen{
     margin: 0;
     width: 10%;
     height: 100%;
@@ -106,8 +108,26 @@ body {
     justify-content: space-evenly;
 }
 
+.planta{
+    margin: 0;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.plantaaa{
+    border: none;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    
+}
+
 .observaciones{
-    width: 50%;
+    width: 40%;
     height: 100%;
     display: flex;
     flex-direction: row;
