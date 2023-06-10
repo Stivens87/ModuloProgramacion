@@ -105,6 +105,7 @@
                         <div class='separadorInt'>
                             <hr>
                         </div>";
+                        
                     }
 
                     echo $contenedorPlantas;
